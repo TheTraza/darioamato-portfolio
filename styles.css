@@ -18,6 +18,15 @@ body {
     overflow: auto; /* Permette lo scrolling */
 }
 
+.media-item img, .media-item video {
+    width: auto; /* Mantiene la dimensione originale dell'immagine */
+    max-width: 100%; /* Limita la larghezza massima a quella del container */
+    height: auto;
+    cursor: pointer; /* Cursore cambia per indicare cliccabilità */
+    margin: 0 auto 30px auto; /* Centra l'immagine e aggiunge distanza sotto */
+    display: block; /* Impedisce che l'immagine si comporti come elemento inline */
+}
+
 /* Sfondo con puntini molto scuri e più distanziati */
 .background {
     position: absolute;
