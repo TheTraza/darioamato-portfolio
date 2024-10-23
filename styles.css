@@ -44,6 +44,18 @@ h1 {
     margin-right: auto;
 }
 
+.media-group-two {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.media-group-two img {
+    width: 48%; /* Le due immagini si dividono lo spazio equamente */
+    height: auto;
+}
+
 /* Label sotto l'immagine */
 .image-label {
     font-size: 12px;
