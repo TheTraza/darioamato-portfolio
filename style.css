@@ -1,0 +1,152 @@
+/* Imposta lo stile globale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Imposta lo sfondo nero e font stile DOS */
+body {
+    background-color: #000;
+    color: #ffffff;
+    font-family: 'Press Start 2P', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Sfondo con puntini molto scuri e più distanziati */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: #000;
+    background-image: radial-gradient(#222222 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: scrollBackground 30s linear infinite;
+}
+
+/* Container per il contenuto sopra lo sfondo */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+/* Stile del titolo */
+h1 {
+    font-size: 24px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Blocco lampeggiante a destra del titolo */
+.blinking-block {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background-color: #ffffff;
+    margin-left: 5px;
+    animation: blink 1s steps(2) infinite;
+}
+
+/* Animazione lampeggiante per il blocco */
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    50.1%, 100% {
+        opacity: 0;
+    }
+}
+
+/* Scorrimento lento dello sfondo */
+@keyframes scrollBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100px; }
+}
+
+/* Stile della lista di progetti */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+    position: relative;
+    text-align: center;
+}
+
+/* Stile dei link */
+nav ul li a {
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 20px;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Blocco bianco lampeggiante per i bottoni, nascosto di default */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 20px;
+    background-color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostra il blocco solo al passaggio del mouse */
+nav ul li a:hover::after {
+    opacity: 1;
+    animation: blink 1s steps(2) infinite; /* Aggiungiamo l'animazione lampeggiante */
+}
+
+/* Descrizione dei progetti */
+.project-description {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Animazione per il fade-in del contenitore */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Stile responsivo per dispositivi mobili */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .project-description {
+        font-size: 10px;
+    }
+}
