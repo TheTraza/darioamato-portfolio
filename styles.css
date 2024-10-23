@@ -135,19 +135,7 @@ nav ul li a:hover::after {
     }
 }
 
-/* Stile responsivo per dispositivi mobili */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 18px;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-    }
-
-    .project-description {
-
-        /* Stile del modal */
+/* Stile per il modal */
 .modal {
     display: none; /* Nascondi il popup per default */
     position: fixed; /* Posizionamento fisso */
@@ -164,10 +152,11 @@ nav ul li a:hover::after {
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
-    margin-top: 500px;  /* Aggiungi un margine superiore */
-    margin-bottom: 50px;  /* Aggiungi un margine inferiore */
+    width: auto; /* Mantiene la dimensione originale dell'immagine */
+    max-width: none; /* Rimuove qualsiasi limitazione di larghezza */
+    height: auto; /* Mantiene le proporzioni */
+    margin-top: 50px;  /* Aggiungi margine superiore */
+    margin-bottom: 50px;  /* Aggiungi margine inferiore */
 }
 
 /* Bottone per chiudere il popup */
@@ -187,6 +176,25 @@ nav ul li a:hover::after {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Stile per tutte le immagini */
+img {
+    width: auto; /* Mantiene la dimensione originale delle immagini */
+    max-width: none; /* Rimuove il ridimensionamento automatico */
+    height: auto; /* Mantiene le proporzioni */
+}
+
+/* Stile responsivo per dispositivi mobili */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .project-description {
         font-size: 10px;
     }
 }
