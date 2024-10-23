@@ -13,10 +13,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     text-align: center;
-    overflow: hidden;
     position: relative;
+    overflow: auto; /* Permette lo scrolling */
 }
 
 /* Sfondo con puntini molto scuri e più distanziati */
