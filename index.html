@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dario Amato</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h1 id="title">Dario Amato<span class="blinking-block" id="titleBlock"></span></h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" class="nav-link">Project 1</a>
+                    <p class="project-description">Brief description of Project 1</p>
+                </li>
+                <li>
+                    <a href="#" class="nav-link">Project 2</a>
+                    <p class="project-description">Brief description of Project 2</p>
+                </li>
+                <li>
+                    <a href="#" class="nav-link">Project 3</a>
+                    <p class="project-description">Brief description of Project 3</p>
+                </li>
+                <li>
+                    <a href="#" class="nav-link">Project 4</a>
+                    <p class="project-description">Brief description of Project 4</p>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- JavaScript per nascondere il blocco nel titolo e gestire il suono -->
+    <script>
+        const titleBlock = document.getElementById('titleBlock');
+        const links = document.querySelectorAll('.nav-link');
+        const clickSound = new Audio('click-sound.mp3');  // Aggiungi il file audio corretto qui
+
+        links.forEach(link => {
+            link.addEventListener('mouseover', () => {
+                titleBlock.style.display = 'none';  // Nasconde il blocco
+                clickSound.play();  // Riproduce il suono
+            });
+
+            link.addEventListener('mouseout', () => {
+                titleBlock.style.display = 'inline-block';  // Mostra il blocco
+            });
+        });
+    </script>
+</body>
+</html>
