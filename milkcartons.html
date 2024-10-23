@@ -32,15 +32,38 @@
 </div>
 <p class="image-label">Descrizione per entrambe le immagini sopra.</p>
 
-        <div class="media-group media-group-three">
-    <img src="BTC_Camera 1.png" alt="Image 1">
-    <img src="BTCfront_Camera 1.png" alt="Image 2">
-    <img src="BTCsides_Camera 1.png" alt="Image 3">
+        <<div class="media-group media-group-three">
+    <img src="BTC_Camera 1.png" alt="Image 1" onclick="openModal('BTC_Camera 1.png')">
+    <img src="BTCfront_Camera 1.png" alt="Image 2" onclick="openModal('BTCfront_Camera 1.png')">
+    <img src="BTCsides_Camera 1.png" alt="Image 3" onclick="openModal('BTCsides_Camera 1.png')">
 </div>
 <p class="image-label">Descrizione per tutte e tre le immagini sopra.</p>
+
+<!-- Modal per visualizzare le immagini in popup -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="imgModal">
+</div>
 
         <!-- Bottone per tornare alla home -->
         <a href="index.html" class="back-home">Back to Home</a>
     </div>
+
+    <script>
+    /* Funzione per aprire il popup */
+    function openModal(imageSrc) {
+        var modal = document.getElementById('myModal');
+        var modalImg = document.getElementById('imgModal');
+        modal.style.display = "block";
+        modalImg.src = imageSrc;
+    }
+
+    /* Funzione per chiudere il popup */
+    function closeModal() {
+        var modal = document.getElementById('myModal');
+        modal.style.display = "none";
+    }
+</script>
+    
 </body>
 </html>
