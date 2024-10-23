@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing Milk Cartons</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Stile per la nuova pagina */
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            gap: 20px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .media-column, .comment-column {
+            flex: 1;
+        }
+
+        .media-column img, .media-column video {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .comment-column {
+            font-size: 14px;
+            color: #888;
+            text-align: left;
+        }
+
+        h2, h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <!-- Titolo della pagina -->
+        <h1 id="title">Missing Milk Cartons<span class="blinking-block" id="titleBlock"></span></h1>
+        <!-- Sottotitolo -->
+        <h2>Software used: 3DS Max, Photoshop, Substance Painter, Marmoset, After Effects</h2>
+
+        <!-- Sezione con due colonne -->
+        <div class="content-wrapper">
+            <!-- Colonna media: Immagini e Video -->
+            <div class="media-column">
+                <img src="image1.jpg" alt="Image 1 description">
+                <video controls>
+                    <source src="video1.mp4" type="video/mp4">
+                    Il tuo browser non supporta il video.
+                </video>
+                <!-- Aggiungi più immagini o video come desiderato -->
+            </div>
+
+            <!-- Colonna dei commenti -->
+            <div class="comment-column">
+                <p>Commento sull'immagine 1: Descrizione o spiegazione dettagliata del contenuto.</p>
+                <p>Commento sul video: Spiega ciò che viene mostrato nel video e il processo dietro di esso.</p>
+                <!-- Aggiungi più commenti corrispondenti a ciascun media -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript per l'interazione del titolo -->
+    <script>
+        const titleBlock = document.getElementById('titleBlock');
+        const links = document.querySelectorAll('.nav-link');
+        const clickSound = new Audio('click-sound.mp3');
+
+        links.forEach(link => {
+            link.addEventListener('mouseover', () => {
+                titleBlock.style.display = 'none';
+                clickSound.play();
+            });
+
+            link.addEventListener('mouseout', () => {
+                titleBlock.style.display = 'inline-block';
+            });
+        });
+    </script>
+</body>
+</html>
