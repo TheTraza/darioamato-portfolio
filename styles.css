@@ -13,131 +13,36 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    overflow: auto;
+    height: 100vh;
 }
 
-/* Sfondo */
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    background-image: radial-gradient(#222222 1px, transparent 1px);
-    background-size: 40px 40px;
-    animation: scrollBackground 30s linear infinite;
-}
-
-/* Container */
 .container {
-    position: relative;
-    z-index: 1;
-    max-width: 1200px;
+    max-width: 800px;
     padding: 20px;
     margin: 0 auto;
 }
 
-/* Titolo */
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-/* Descrizione */
 .description {
-    max-width: 1000px;
-    margin: 10px auto 40px;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-/* Immagini e video */
-.media-item img, .media-item video {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 50px;
-}
-
-.small-media img, .small-media video {
-    width: 60%; /* Ridimensiona la prima immagine e video */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Gruppi di immagini */
-.media-group {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 50px;
-}
-
-.media-group-three img {
-    width: 30%;
-}
-
-.media-description {
-    font-size: 14px;
-    color: #888;
-    text-align: center;
-    margin: 20px 0;
-}
-
-/* GIF con descrizioni */
-.gif-group {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-}
-
-.gif-container {
-    text-align: center;
-}
-
-.gif-container img {
-    width: 50%; /* Ingrandisce le GIF */
-    height: auto;
+    font-size: 16px;
+    margin-bottom: 40px;
+    line-height: 1.5;
 }
 
 .back-home {
-    margin-top: 60px;
-    display: block;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-}
-
-.close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
     color: #fff;
-    font-size: 40px;
+    text-decoration: none;
+    background-color: #555;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
 }
 
-.close:hover, .close:focus {
-    color: #bbb;
-}
-
-/* Animazione sfondo */
-@keyframes scrollBackground {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 100px; }
+.back-home:hover {
+    background-color: #777;
 }
