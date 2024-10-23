@@ -69,6 +69,36 @@ h1 {
     height: auto;
 }
 
+* Stile del modal (popup) */
+.modal {
+    display: none; /* Nascondi il modal di default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Sfondo semi-trasparente */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    margin-top: 50px; /* Centra l'immagine nel popup */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 /* Label sotto l'immagine */
 .image-label {
     font-size: 12px;
