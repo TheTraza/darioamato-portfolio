@@ -6,86 +6,6 @@
     <title>Missing Milk Cartons</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .description {
-            max-width: 1000px; /* Allarga la descrizione */
-            margin: 20px auto; /* Margine per separare dal resto */
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .media-item img, .media-item video {
-            width: 50%; /* Riduci le immagini */
-            max-width: 50%;
-            height: auto;
-            cursor: pointer; /* Cursore cambia per indicare cliccabilità */
-            margin-bottom: 30px; /* Distanza tra i blocchi */
-        }
-
-        .media-group {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px; /* Aumenta la spaziatura tra immagini/video */
-            margin-bottom: 30px; /* Aumenta la spaziatura tra i blocchi */
-        }
-
-        .media-group-two img {
-            width: 45%; /* Due immagini fianco a fianco, leggermente più piccole */
-        }
-
-        .media-group-three img {
-            width: 30%; /* Tre immagini fianco a fianco, più piccole */
-        }
-
-        .media-description {
-            font-size: 14px;
-            color: #888;
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        /* Stile del modal (popup) */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9); /* Sfondo semi-trasparente */
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <div class="background"></div>
@@ -144,15 +64,15 @@
         </div>
         <p class="media-description">Descrizione per le tre immagini sopra.</p>
 
-        <!-- Tre video con una descrizione per ogni video -->
-     <div class="media-group media-group-three">
-    <img src="gif1.gif" alt="GIF 1">
-    <img src="gif2.gif" alt="GIF 2">
-    <img src="gif3.gif" alt="GIF 3">
-</div>
-<p class="media-description">Descrizione per il primo GIF.</p>
-<p class="media-description">Descrizione per il secondo GIF.</p>
-<p class="media-description">Descrizione per il terzo GIF.</p>
+        <!-- Tre GIF con una descrizione per ogni GIF -->
+        <div class="media-group media-group-three">
+            <img src="gif1.gif" alt="GIF 1">
+            <img src="gif2.gif" alt="GIF 2">
+            <img src="gif3.gif" alt="GIF 3">
+        </div>
+        <p class="media-description">Descrizione per il primo GIF.</p>
+        <p class="media-description">Descrizione per il secondo GIF.</p>
+        <p class="media-description">Descrizione per il terzo GIF.</p>
 
         <!-- Modal (popup) -->
         <div id="myModal" class="modal">
