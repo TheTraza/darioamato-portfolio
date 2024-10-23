@@ -35,6 +35,7 @@
         .media-item img, .media-item video {
             max-width: 45%;
             height: auto;
+            cursor: pointer; /* Cambia il cursore quando si passa sopra l'immagine */
         }
 
         .media-description {
@@ -44,17 +45,40 @@
             text-align: left;
         }
 
-        /* Bottone per tornare alla home */
-        .back-home {
-            display: inline-block;
-            margin: 40px auto;
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 14px;
-            text-decoration: none;
-            border-radius: 4px;
-            text-align: center;
+        /* Stile del modal (popup) */
+        .modal {
+            display: none; /* Nascondi il popup di default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9); /* Sfondo semi-trasparente */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            cursor: pointer;
         }
 
         /* Riduci lo spazio per gli schermi più piccoli */
@@ -84,19 +108,19 @@
 
         <!-- Sezione per media e descrizioni -->
         <div class="media-section">
+            <!-- Esempio di immagine con descrizione -->
+            <div class="media-item">
+                <img src="image1.jpg" alt="Milk Carton 3D Model" class="clickable-image" onclick="openModal('image1-large.jpg')">
+                <p class="media-description">A detailed render of the Bitcoin milk carton, created using 3DS Max and Substance Painter, highlighting the custom textures and design.</p>
+            </div>
+
             <!-- Esempio di video con descrizione -->
             <div class="media-item">
                 <video controls>
-                    <source src="Missingmilkcarton Fnd-1.mp4" type="video/mp4">
+                    <source src="video1.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <p class="media-description">This teaser video was created to generate anticipation before the NFT drop, showcasing the milk cartons in a dynamic 3D scene.</p>
-            </div>
-
-            <!-- Esempio di immagine con descrizione -->
-            <div class="media-item">
-                <img src="MilkCartonsFront_Camera 1.png" alt="Milk Carton 3D Model">
-                <p class="media-description">A detailed render of the Bitcoin milk carton, created using 3DS Max and Substance Painter, highlighting the custom textures and design.</p>
             </div>
 
             <!-- Puoi aggiungere più media-item qui -->
@@ -106,35 +130,24 @@
         <a href="index.html" class="back-home">Back to Home</a>
     </div>
 
-    <!-- JavaScript per l'interazione del titolo -->
-    <script>
-        const titleBlock = document.getElementById('titleBlock');
-        const links = document.querySelectorAll('.nav-link');
-        const clickSound = new Audio('click-sound.mp3');
+    <!-- Modal (popup) -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="imgModal">
+    </div>
 
-        links.forEach(link => {
-            link.addEventListener('mouseover', () => {
-                titleBlock.style.display = 'none';
-                clickSound.play();
-            });
-
-            link.addEventListener('mouseout', () => {
-                titleBlock.style.display = 'inline-block';
-            });
-        });
-    </script>
     <!-- JavaScript per aprire e chiudere il popup -->
-<script>
-/* Funzione per aprire il popup */
-function openModal(imageSrc) {
-    document.getElementById('myModal').style.display = "block";
-    document.getElementById('imgModal').src = imageSrc;
-}
+    <script>
+    /* Funzione per aprire il popup */
+    function openModal(imageSrc) {
+        document.getElementById('myModal').style.display = "block";
+        document.getElementById('imgModal').src = imageSrc;
+    }
 
-/* Funzione per chiudere il popup */
-function closeModal() {
-    document.getElementById('myModal').style.display = "none";
-}
-</script>
+    /* Funzione per chiudere il popup */
+    function closeModal() {
+        document.getElementById('myModal').style.display = "none";
+    }
+    </script>
 </body>
 </html>
