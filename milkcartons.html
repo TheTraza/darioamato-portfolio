@@ -123,5 +123,18 @@
             });
         });
     </script>
+    <!-- JavaScript per aprire e chiudere il popup -->
+<script>
+/* Funzione per aprire il popup */
+function openModal(imageSrc) {
+    document.getElementById('myModal').style.display = "block";
+    document.getElementById('imgModal').src = imageSrc;
+}
+
+/* Funzione per chiudere il popup */
+function closeModal() {
+    document.getElementById('myModal').style.display = "none";
+}
+</script>
 </body>
 </html>
