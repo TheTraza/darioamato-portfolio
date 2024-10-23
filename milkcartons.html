@@ -17,6 +17,7 @@
             width: 100%;
             max-width: 100%; /* Rende le immagini più grandi */
             height: auto;
+            cursor: pointer; /* Cursore cambia per indicare cliccabilità */
         }
 
         .media-group {
@@ -44,6 +45,42 @@
             text-align: center;
             margin: 20px 0;
         }
+
+        /* Stile del modal (popup) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9); /* Sfondo semi-trasparente */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -54,13 +91,13 @@
 
         <!-- Immagine centrale senza descrizione -->
         <div class="media-item">
-            <img src="image1-large.jpg" alt="Immagine centrale">
+            <img src="image1-large.jpg" alt="Immagine centrale" onclick="openModal('image1-large.jpg')">
         </div>
 
         <!-- Due immagini con una descrizione per entrambe -->
         <div class="media-group media-group-two">
-            <img src="image2.jpg" alt="Immagine 1">
-            <img src="image3.jpg" alt="Immagine 2">
+            <img src="image2.jpg" alt="Immagine 1" onclick="openModal('image2-large.jpg')">
+            <img src="image3.jpg" alt="Immagine 2" onclick="openModal('image3-large.jpg')">
         </div>
         <p class="media-description">Descrizione per le due immagini sopra.</p>
 
@@ -75,25 +112,25 @@
 
         <!-- Tre immagini con una sola descrizione -->
         <div class="media-group media-group-three">
-            <img src="image4.jpg" alt="Immagine 1">
-            <img src="image5.jpg" alt="Immagine 2">
-            <img src="image6.jpg" alt="Immagine 3">
+            <img src="image4.jpg" alt="Immagine 1" onclick="openModal('image4-large.jpg')">
+            <img src="image5.jpg" alt="Immagine 2" onclick="openModal('image5-large.jpg')">
+            <img src="image6.jpg" alt="Immagine 3" onclick="openModal('image6-large.jpg')">
         </div>
         <p class="media-description">Descrizione per le tre immagini sopra.</p>
 
         <!-- Altre tre immagini con una sola descrizione -->
         <div class="media-group media-group-three">
-            <img src="image7.jpg" alt="Immagine 1">
-            <img src="image8.jpg" alt="Immagine 2">
-            <img src="image9.jpg" alt="Immagine 3">
+            <img src="image7.jpg" alt="Immagine 1" onclick="openModal('image7-large.jpg')">
+            <img src="image8.jpg" alt="Immagine 2" onclick="openModal('image8-large.jpg')">
+            <img src="image9.jpg" alt="Immagine 3" onclick="openModal('image9-large.jpg')">
         </div>
         <p class="media-description">Descrizione per le tre immagini sopra.</p>
 
         <!-- Altre tre immagini con una sola descrizione -->
         <div class="media-group media-group-three">
-            <img src="image10.jpg" alt="Immagine 1">
-            <img src="image11.jpg" alt="Immagine 2">
-            <img src="image12.jpg" alt="Immagine 3">
+            <img src="image10.jpg" alt="Immagine 1" onclick="openModal('image10-large.jpg')">
+            <img src="image11.jpg" alt="Immagine 2" onclick="openModal('image11-large.jpg')">
+            <img src="image12.jpg" alt="Immagine 3" onclick="openModal('image12-large.jpg')">
         </div>
         <p class="media-description">Descrizione per le tre immagini sopra.</p>
 
@@ -116,8 +153,28 @@
         <p class="media-description">Descrizione per il secondo video.</p>
         <p class="media-description">Descrizione per il terzo video.</p>
 
+        <!-- Modal (popup) -->
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="imgModal">
+        </div>
+
         <!-- Bottone per tornare alla home -->
         <a href="index.html" class="back-home">Back to Home</a>
     </div>
+
+    <!-- JavaScript per aprire e chiudere il popup -->
+    <script>
+    /* Funzione per aprire il popup */
+    function openModal(imageSrc) {
+        document.getElementById('myModal').style.display = "block";
+        document.getElementById('imgModal').src = imageSrc;
+    }
+
+    /* Funzione per chiudere il popup */
+    function closeModal() {
+        document.getElementById('myModal').style.display = "none";
+    }
+    </script>
 </body>
 </html>
