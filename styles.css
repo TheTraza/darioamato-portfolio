@@ -11,9 +11,8 @@ body {
     font-family: 'Press Start 2P', monospace;
     display: flex;
     justify-content: center;
-    align-items: center;
     text-align: center;
-    height: 100vh;
+    padding-top: 50px; /* Aggiungi padding per spostare il contenuto in alto */
 }
 
 .container {
