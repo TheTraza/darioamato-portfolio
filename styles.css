@@ -57,6 +57,18 @@ h1 {
     height: auto; /* Mantieni le proporzioni */
 }
 
+.media-group-three {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.media-group-three img {
+    width: 32%; /* Le tre immagini si dividono lo spazio equamente */
+    height: auto;
+}
+
 /* Label sotto l'immagine */
 .image-label {
     font-size: 12px;
