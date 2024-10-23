@@ -26,10 +26,10 @@ h1 {
 
 /* Descrizione con font ridotto e container più largo */
 .description {
-    font-size: 16px; /* Riduce la dimensione del font */
+    font-size: 12px; /* Riduce la dimensione del font */
     margin-bottom: 60px;
     line-height: 1.6;
-    max-width: 900px; /* Aumenta la larghezza della descrizione */
+    max-width: 800px; /* Aumenta la larghezza della descrizione */
     margin-left: auto;
     margin-right: auto;
 }
@@ -42,6 +42,14 @@ h1 {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Label sotto l'immagine */
+.image-label {
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+    line-height: 1.4;
 }
 
 /* Aumenta lo spazio prima del bottone */
