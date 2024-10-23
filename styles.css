@@ -101,4 +101,97 @@ h1 {
     margin-right: auto;
 }
 
-/
+/* Gestione dei gruppi di immagini e video */
+.media-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.media-group-two img {
+    width: auto;
+    max-width: 45%;
+    height: auto;
+}
+
+.media-group-three img {
+    width: 30%;
+    height: auto;
+}
+
+.media-description {
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* Aumenta la spaziatura tra l'ultimo elemento e il bottone */
+.back-home {
+    margin-top: 60px;
+    display: block;
+}
+
+/* Stile del modal (popup) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    cursor: pointer;
+}
+
+/* Stile responsivo per dispositivi mobili */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
+
+    .media-group-two img,
+    .media-group-three img {
+        width: 100%;
+    }
+
+    .back-home {
+        margin-top: 40px;
+    }
+}
+
+/* Animazione per il fade-in del contenitore */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
