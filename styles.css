@@ -9,10 +9,9 @@ body {
     background-color: #000;
     color: #fff;
     font-family: 'Press Start 2P', monospace;
-    display: flex;
-    justify-content: center;
     text-align: center;
-    padding-top: 50px; /* Aggiungi padding per spostare il contenuto in alto */
+    padding-top: 50px; /* Sposta il contenuto verso il basso dall'alto */
+    height: 100vh;
 }
 
 .container {
