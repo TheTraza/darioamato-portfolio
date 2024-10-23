@@ -1,107 +1,71 @@
-/* Imposta lo stile globale */
+/* Stile globale */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Imposta lo sfondo nero e font stile DOS */
 body {
     background-color: #000;
-    color: #ffffff;
+    color: #fff;
     font-family: 'Press Start 2P', monospace;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative;
-    overflow: auto; /* Permette lo scrolling */
+    overflow: auto;
 }
 
-/* Sfondo con puntini molto scuri e più distanziati */
+/* Sfondo */
 .background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
     background-color: #000;
     background-image: radial-gradient(#222222 1px, transparent 1px);
     background-size: 40px 40px;
     animation: scrollBackground 30s linear infinite;
 }
 
-/* Container per il contenuto sopra lo sfondo */
+/* Container */
 .container {
     position: relative;
     z-index: 1;
     max-width: 1200px;
     padding: 20px;
     margin: 0 auto;
-    text-align: center;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
 }
 
-/* Stile del titolo */
+/* Titolo */
 h1 {
     font-size: 24px;
-    margin-bottom: 20px; /* Riduce lo spazio tra il titolo e la descrizione */
-    font-weight: bold;
-    text-transform: uppercase;
-    display: inline-block;
-    white-space: nowrap;
+    margin-bottom: 20px;
 }
 
-/* Blocco lampeggiante a destra del titolo */
-.blinking-block {
-    display: inline-block;
-    width: 10px;
-    height: 20px;
-    background-color: #ffffff;
-    margin-left: 5px;
-    animation: blink 1s steps(2) infinite;
-}
-
-/* Animazione lampeggiante per il blocco */
-@keyframes blink {
-    0%, 50% {
-        opacity: 1;
-    }
-    50.1%, 100% {
-        opacity: 0;
-    }
-}
-
-/* Scorrimento lento dello sfondo */
-@keyframes scrollBackground {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 100px; }
-}
-
-/* Stile per la descrizione */
+/* Descrizione */
 .description {
     max-width: 1000px;
     margin: 10px auto 40px;
     font-size: 14px;
     line-height: 1.6;
-    text-align: center;
 }
 
-/* Immagini e video nel media-item */
+/* Immagini e video */
 .media-item img, .media-item video {
-    width: auto;
     max-width: 100%;
     height: auto;
-    cursor: pointer;
     margin-bottom: 50px;
-    display: block;
+}
+
+.small-media img, .small-media video {
+    width: 60%; /* Ridimensiona la prima immagine e video */
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Gestione dei gruppi di immagini e video */
+/* Gruppi di immagini */
 .media-group {
     display: flex;
     justify-content: space-between;
@@ -109,31 +73,39 @@ h1 {
     margin-bottom: 50px;
 }
 
-.media-group-two img {
-    width: auto;
-    max-width: 45%;
-    height: auto;
-}
-
 .media-group-three img {
     width: 30%;
-    height: auto;
 }
 
 .media-description {
     font-size: 14px;
     color: #888;
     text-align: center;
-    margin: 40px 0;
+    margin: 20px 0;
 }
 
-/* Aumenta la spaziatura tra l'ultimo elemento e il bottone */
+/* GIF con descrizioni */
+.gif-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.gif-container {
+    text-align: center;
+}
+
+.gif-container img {
+    width: 50%; /* Ingrandisce le GIF */
+    height: auto;
+}
+
 .back-home {
     margin-top: 60px;
     display: block;
 }
 
-/* Stile del modal (popup) */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -142,7 +114,6 @@ h1 {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -159,39 +130,14 @@ h1 {
     right: 35px;
     color: #fff;
     font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
     color: #bbb;
-    cursor: pointer;
 }
 
-/* Stile responsivo per dispositivi mobili */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 18px;
-    }
-
-    .description {
-        font-size: 12px;
-    }
-
-    .media-group-two img,
-    .media-group-three img {
-        width: 100%;
-    }
-
-    .back-home {
-        margin-top: 40px;
-    }
-}
-
-/* Animazione per il fade-in del contenitore */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+/* Animazione sfondo */
+@keyframes scrollBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100px; }
 }
