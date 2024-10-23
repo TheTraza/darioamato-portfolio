@@ -166,6 +166,8 @@ nav ul li a:hover::after {
     display: block;
     width: 80%;
     max-width: 700px;
+    margin-top: 50px;  /* Aggiungi un margine superiore */
+    margin-bottom: 50px;  /* Aggiungi un margine inferiore */
 }
 
 /* Bottone per chiudere il popup */
