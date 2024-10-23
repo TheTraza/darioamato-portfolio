@@ -7,40 +7,66 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Stile per la nuova pagina */
-        .content-wrapper {
+        /* Stile per la descrizione e media */
+        .description {
+            max-width: 900px;
+            margin: 20px auto;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .media-section {
             display: flex;
-            justify-content: space-between;
-            margin-top: 50px;
+            flex-direction: column;
             gap: 20px;
             max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 40px auto;
         }
 
-        .media-column, .comment-column {
-            flex: 1;
+        .media-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
         }
 
-        .media-column img, .media-column video {
-            max-width: 100%;
+        .media-item img, .media-item video {
+            max-width: 45%;
             height: auto;
-            margin-bottom: 20px;
         }
 
-        .comment-column {
+        .media-description {
+            flex: 1;
             font-size: 14px;
             color: #888;
             text-align: left;
         }
 
-        h2, h3 {
-            font-size: 18px;
-            margin-bottom: 20px;
+        /* Bottone per tornare alla home */
+        .back-home {
+            display: inline-block;
+            margin: 40px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
         }
 
-        h3 {
-            margin-top: 40px;
+        /* Riduci lo spazio per gli schermi più piccoli */
+        @media (max-width: 768px) {
+            .media-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .media-item img, .media-item video {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -49,28 +75,35 @@
     <div class="container">
         <!-- Titolo della pagina -->
         <h1 id="title">Missing Milk Cartons<span class="blinking-block" id="titleBlock"></span></h1>
-        <!-- Sottotitolo -->
-        <h2>Software used: 3DS Max, Photoshop, Substance Painter, Marmoset, After Effects</h2>
 
-        <!-- Sezione con due colonne -->
-        <div class="content-wrapper">
-            <!-- Colonna media: Immagini e Video -->
-            <div class="media-column">
-                <img src="MilkCartonsFront_Camera 1.png" alt="Image 1 description">
-                <video controls>
-                    <source src="Missingmilkcarton Fnd-1.mp4" type="video/mp4">
-                    Il tuo browser non supporta il video.
-                </video>
-                <!-- Aggiungi più immagini o video come desiderato -->
-            </div>
-
-            <!-- Colonna dei commenti -->
-            <div class="comment-column">
-                <p>Commento sull'immagine 1: Descrizione o spiegazione dettagliata del contenuto.</p>
-                <p>Commento sul video: Spiega ciò che viene mostrato nel video e il processo dietro di esso.</p>
-                <!-- Aggiungi più commenti corrispondenti a ciascun media -->
-            </div>
+        <!-- Descrizione del progetto -->
+        <div class="description">
+            <p>Missing Milk Cartons is a project in the crypto world, created under my online alias "gonerotten," where I explored NFT technology and tested the NFT auction platform Foundation. The concept is inspired by vintage American milk cartons, replacing missing children with the creators of famous crypto tokens, such as Bitcoin, Ethereum, and Binance. Instead of nutritional information, the carton displays the token’s value and statistics at the time the NFT was created.</p>
+            <p>The project involved producing visual teasers (both videos and images) prior to the NFT drop, followed by the creation of three unique milk carton NFTs for Bitcoin, Ethereum, and Binance. I used 3DS Max for 3D modeling, Photoshop for graphics, Substance Painter for texturing, Marmoset for lighting and rendering, and After Effects for post-production.</p>
         </div>
+
+        <!-- Sezione per media e descrizioni -->
+        <div class="media-section">
+            <!-- Esempio di video con descrizione -->
+            <div class="media-item">
+                <video controls>
+                    <source src="video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="media-description">This teaser video was created to generate anticipation before the NFT drop, showcasing the milk cartons in a dynamic 3D scene.</p>
+            </div>
+
+            <!-- Esempio di immagine con descrizione -->
+            <div class="media-item">
+                <img src="image1.jpg" alt="Milk Carton 3D Model">
+                <p class="media-description">A detailed render of the Bitcoin milk carton, created using 3DS Max and Substance Painter, highlighting the custom textures and design.</p>
+            </div>
+
+            <!-- Puoi aggiungere più media-item qui -->
+        </div>
+
+        <!-- Bottone per tornare alla home -->
+        <a href="index.html" class="back-home">Back to Home</a>
     </div>
 
     <!-- JavaScript per l'interazione del titolo -->
