@@ -10,8 +10,7 @@ body {
     color: #fff;
     font-family: 'Press Start 2P', monospace;
     text-align: center;
-    padding-top: 50px; /* Sposta il contenuto verso il basso dall'alto */
-    height: 100vh;
+    padding-top: 50px;
 }
 
 .container {
@@ -29,6 +28,16 @@ h1 {
     font-size: 16px;
     margin-bottom: 40px;
     line-height: 1.5;
+}
+
+/* Immagine non ridimensionata */
+.media-item img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .back-home {
