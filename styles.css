@@ -177,24 +177,9 @@ nav ul li a:hover::after {
     cursor: pointer;
 }
 
-/* Stile per tutte le immagini */
+/* Stile per tutte le immagini - Mantiene le dimensioni originali */
 img {
-    width: auto; /* Mantiene la dimensione originale delle immagini */
+    display: block; /* Assicura che l'immagine non sia inline */
     max-width: none; /* Rimuove il ridimensionamento automatico */
     height: auto; /* Mantiene le proporzioni */
-}
-
-/* Stile responsivo per dispositivi mobili */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 18px;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-    }
-
-    .project-description {
-        font-size: 10px;
-    }
 }
