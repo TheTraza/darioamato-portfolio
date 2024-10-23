@@ -39,9 +39,9 @@ body {
     max-width: 1200px;
     padding: 20px;
     margin: 0 auto;
+    text-align: center;
     opacity: 0;
     animation: fadeIn 2s forwards;
-    text-align: center; /* Assicura che il testo sia centrato */
 }
 
 /* Stile del titolo */
@@ -187,5 +187,12 @@ h1 {
 
     .back-home {
         margin-top: 40px;
+    }
+}
+
+/* Animazione per il fade-in del contenitore */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
     }
 }
