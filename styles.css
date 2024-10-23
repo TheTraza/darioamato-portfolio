@@ -1,174 +1,77 @@
-/* Imposta lo stile globale */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-/* Imposta lo sfondo nero e font stile DOS */
-body {
-    background-color: #000;
-    color: #ffffff;
-    font-family: 'Press Start 2P', monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    overflow: auto; /* Permette lo scrolling */
+.description {
+    max-width: 1000px; /* Allarga la descrizione */
+    margin: 10px auto 40px; /* Riduci lo spazio sopra, aumenta lo spazio sotto */
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 .media-item img, .media-item video {
-    width: auto; /* Mantiene la dimensione originale dell'immagine */
-    max-width: 100%; /* Limita la larghezza massima a quella del container */
+    width: auto; /* Mantiene la dimensione originale */
+    max-width: 100%; /* Limita la larghezza massima */
     height: auto;
     cursor: pointer; /* Cursore cambia per indicare cliccabilità */
-    margin: 0 auto 30px auto; /* Centra l'immagine e aggiunge distanza sotto */
-    display: block; /* Impedisce che l'immagine si comporti come elemento inline */
+    margin-bottom: 50px; /* Aumenta la distanza tra i blocchi */
+    display: block; /* Assicura che sia centrata */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Sfondo con puntini molto scuri e più distanziati */
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background-color: #000;
-    background-image: radial-gradient(#222222 1px, transparent 1px);
-    background-size: 40px 40px;
-    animation: scrollBackground 30s linear infinite;
+.media-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px; /* Aumenta la spaziatura tra immagini/video */
+    margin-bottom: 50px; /* Aumenta la spaziatura tra i blocchi */
 }
 
-/* Container per il contenuto sopra lo sfondo */
-.container {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    padding: 20px;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
+.media-group-two img {
+    width: auto; /* Mantiene la dimensione originale */
+    max-width: 45%; /* Due immagini fianco a fianco, senza ridimensionamento */
+    height: auto;
 }
 
-/* Stile del titolo */
-h1 {
-    font-size: 24px;
-    margin-bottom: 40px;
-    font-weight: bold;
-    text-transform: uppercase;
-    display: inline-block;
-    white-space: nowrap;
+.media-group-three img {
+    width: 30%; /* Tre immagini fianco a fianco, con spazio aumentato */
+    height: auto;
 }
 
-/* Blocco lampeggiante a destra del titolo */
-.blinking-block {
-    display: inline-block;
-    width: 10px;
-    height: 20px;
-    background-color: #ffffff;
-    margin-left: 5px;
-    animation: blink 1s steps(2) infinite;
-}
-
-/* Animazione lampeggiante per il blocco */
-@keyframes blink {
-    0%, 50% {
-        opacity: 1;
-    }
-    50.1%, 100% {
-        opacity: 0;
-    }
-}
-
-/* Scorrimento lento dello sfondo */
-@keyframes scrollBackground {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 100px; }
-}
-
-/* Stile della lista di progetti */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 20px 0;
-    position: relative;
-    text-align: center;
-}
-
-/* Stile dei link */
-nav ul li a {
-    color: #ffffff;
-    font-size: 16px;
-    text-decoration: none;
-    padding: 10px 20px;
-    position: relative;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-/* Blocco bianco lampeggiante per i bottoni, nascosto di default */
-nav ul li a::after {
-    content: "";
-    position: absolute;
-    right: -15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 20px;
-    background-color: #ffffff;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-/* Mostra il blocco solo al passaggio del mouse */
-nav ul li a:hover::after {
-    opacity: 1;
-    animation: blink 1s steps(2) infinite; /* Aggiungiamo l'animazione lampeggiante */
-}
-
-/* Descrizione dei progetti */
-.project-description {
-    font-size: 12px;
+.media-description {
+    font-size: 14px;
     color: #888;
-    margin-top: 5px;
+    text-align: center;
+    margin: 40px 0; /* Aumenta la spaziatura tra le descrizioni */
 }
 
-/* Animazione per il fade-in del contenitore */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+/* Aumenta la spaziatura tra l'ultimo elemento e il bottone */
+.back-home {
+    margin-top: 60px; /* Aumenta lo spazio sopra il bottone */
+    display: block;
 }
 
-/* Stile per il modal */
 .modal {
-    display: none; /* Nascondi il popup per default */
-    position: fixed; /* Posizionamento fisso */
-    z-index: 1000; /* Assicurati che il popup sia sopra tutti gli altri elementi */
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Permette lo scrolling nel caso di immagini grandi */
-    background-color: rgba(0, 0, 0, 0.9); /* Sfondo semi-trasparente */
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Contenuto del modal: l'immagine ingrandita */
 .modal-content {
     margin: auto;
     display: block;
-    width: auto; /* Mantiene la dimensione originale dell'immagine */
-    max-width: none; /* Rimuove qualsiasi limitazione di larghezza */
-    height: auto; /* Mantiene le proporzioni */
-    margin-top: 50px;  /* Aggiungi margine superiore */
-    margin-bottom: 50px;  /* Aggiungi margine inferiore */
+    width: 80%;
+    max-width: 700px;
 }
 
-/* Bottone per chiudere il popup */
 .close {
     position: absolute;
     top: 20px;
@@ -182,13 +85,5 @@ nav ul li a:hover::after {
 .close:hover,
 .close:focus {
     color: #bbb;
-    text-decoration: none;
     cursor: pointer;
-}
-
-/* Stile per tutte le immagini - Mantiene le dimensioni originali */
-img {
-    display: block; /* Assicura che l'immagine non sia inline */
-    max-width: none; /* Rimuove il ridimensionamento automatico */
-    height: auto; /* Mantiene le proporzioni */
 }
