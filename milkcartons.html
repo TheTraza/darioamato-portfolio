@@ -19,8 +19,8 @@
             <p>The project involved producing visual teasers (both videos and images) prior to the NFT drop, followed by the creation of three unique milk carton NFTs for Bitcoin, Ethereum, and Binance. I used 3DS Max for 3D modeling, Photoshop for graphics, Substance Painter for texturing, Marmoset for lighting and rendering, and After Effects for post-production.</p>
         </div>
 
-        <!-- Immagine centrale senza descrizione -->
-        <div class="media-item">
+        <!-- Immagine centrale senza descrizione con dimensioni ridotte -->
+        <div class="media-item small-media">
             <img src="iglayout.png" alt="Immagine centrale" onclick="openModal('iglayout.png')">
         </div>
 
@@ -31,8 +31,8 @@
         </div>
         <p class="media-description">Descrizione per le due immagini sopra.</p>
 
-        <!-- Video centrale con descrizione -->
-        <div class="media-item">
+        <!-- Video centrale con descrizione e dimensioni ridotte -->
+        <div class="media-item small-media">
             <video controls>
                 <source src="Missingmilkcarton Fnd-1.mp4" type="video/mp4">
                 Il tuo browser non supporta il video.
@@ -64,15 +64,21 @@
         </div>
         <p class="media-description">Descrizione per le tre immagini sopra.</p>
 
-        <!-- Tre GIF con una descrizione per ogni GIF -->
-        <div class="media-group media-group-three">
-            <img src="3ds.gif" alt="GIF 1">
-            <img src="photo.gif" alt="GIF 2">
-            <img src="gif3.gif" alt="GIF 3">
+        <!-- Tre GIF con descrizione sotto ogni GIF -->
+        <div class="media-group media-group-three gif-group">
+            <div class="gif-container">
+                <img src="3ds.gif" alt="GIF 1">
+                <p class="media-description">Descrizione per il primo GIF.</p>
+            </div>
+            <div class="gif-container">
+                <img src="photo.gif" alt="GIF 2">
+                <p class="media-description">Descrizione per il secondo GIF.</p>
+            </div>
+            <div class="gif-container">
+                <img src="gif3.gif" alt="GIF 3">
+                <p class="media-description">Descrizione per il terzo GIF.</p>
+            </div>
         </div>
-        <p class="media-description">Descrizione per il primo GIF.</p>
-        <p class="media-description">Descrizione per il secondo GIF.</p>
-        <p class="media-description">Descrizione per il terzo GIF.</p>
 
         <!-- Modal (popup) -->
         <div id="myModal" class="modal">
